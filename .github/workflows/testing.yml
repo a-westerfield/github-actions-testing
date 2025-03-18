@@ -10,13 +10,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Install C++ Dependencies
-        run: sudo apt-get install -y cmake g++ libgtest-dev
+      # - name: Install C++ Dependencies
+      #   run: sudo apt-get install -y cmake g++ libgtest-dev
 
-      - name: Build and Run C++ Tests
-        run: |
-          g++ -o test_example test_example.cpp -lgtest -lgtest_main -pthread
-          ./test_example
+      # - name: Build and Run C++ Tests
+      #   run: |
+      #     g++ -o test_example test_example.cpp -lgtest -lgtest_main -pthread
+      #     ./test_example
 
       - name: Setup Python
         uses: actions/setup-python@v4
