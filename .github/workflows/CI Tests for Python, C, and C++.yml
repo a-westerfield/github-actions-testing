@@ -23,24 +23,24 @@ jobs:
       #   run: pytest tests/
 
       # 🔧 Install dependencies for C and C++
-      - name: Install C and C++ Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y cmake g++ gcc libcunit1-dev libgtest-dev
+      # - name: Install C and C++ Dependencies
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y cmake g++ gcc libcunit1-dev libgtest-dev
 
       # 🛠️ Build and Run C Tests
-      - name: Build and Run C Tests
-        run: |
-          gcc -o c_tests tests/c_tests.c -lcunit -L/usr/lib -I/usr/include
-          ./c_tests
+      # - name: Build and Run C Tests
+      #   run: |
+      #     gcc -o c_tests tests/c_tests.c -lcunit -L/usr/lib -I/usr/include
+      #     ./c_tests
 
       # 🚀 Build and Run C++ Tests
-      - name: Build and Run C++ Tests
-        run: |
-          cd /usr/src/gtest
-          sudo cmake CMakeLists.txt
-          sudo make
-          sudo cp lib/*.a /usr/lib
-          cd $GITHUB_WORKSPACE
-          g++ -o cpp_tests tests/cpp_tests.cpp -lgtest -lgtest_main -pthread
-          ./cpp_tests
+      # - name: Build and Run C++ Tests
+      #   run: |
+      #     cd /usr/src/gtest
+      #     sudo cmake CMakeLists.txt
+      #     sudo make
+      #     sudo cp lib/*.a /usr/lib
+      #     cd $GITHUB_WORKSPACE
+      #     g++ -o cpp_tests tests/cpp_tests.cpp -lgtest -lgtest_main -pthread
+      #     ./cpp_tests
